@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Gallery</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/results.css">
+	<script src="https://use.fontawesome.com/6cd75c7cb4.js"></script>
+</head>
+
+<body class='resBody'>
+
+<div class="container">
+	<div class="jumbotron">
+		<h1><i class="fa fa-ticket" aria-hidden="true"></i></span> Movie List</h1>
+		<p>Your Search Results</p>
+		<a class='btn btn-primary btn-large' href="/">Search agian</a>
+	</div>
+    <br>
+
+	<div class="row" style='display:flex; flex-wrap: wrap;'>
+	    <% data['Search'].forEach(function(movie){ %>
+		<div class="col-lg-4 col-sm-6">
+            <div class='thumbnail'>
+	            <div class='caption'>
+	            	<h5><%= movie['Title'] %> - <%=movie['Year']%></h5>
+	            </div>
+            	<img src="<%= movie['Poster'] %>">
+            </div>
+        </div>
+        <% }); %>
+    </div>
+
+    
+
+
+
+
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
+</html>
